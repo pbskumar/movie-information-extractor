@@ -61,11 +61,11 @@ if __name__ == '__main__':
     # Fieldnames which are be extracted from IMDB
     json_field_names = ["Title", "Year"]
     # Input file with movie titles and release year
-    input_file = csv.DictReader(open("movies_dataset.csv"))
+    input_file = csv.DictReader(open("data/movies_dataset.csv"))
     # Creating an output file to write the results
     # If information about a movie is not found, there would be an empty line in the output file.
     # Hence, results would be in the same order of the input, but blank lines may appear if details of the corresponding movie are unavailable
-    result_file = csv.DictWriter(open("result_dataSet.csv", 'w', newline=''), fieldnames=json_field_names)
+    result_file = csv.DictWriter(open("data/result_dataSet.csv", 'w', newline=''), fieldnames=json_field_names)
     result_file.writeheader()
     for line in input_file:
         if line['Title'] != '':
